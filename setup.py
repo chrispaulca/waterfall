@@ -2,7 +2,7 @@ from distutils.core import setup
 setup(
   name = 'waterfallcharts',
   packages = ['waterfallcharts'],
-  version = '0.1',
+  version = '0.2',
   description = 'Quickly generates standard waterfall charts, takes two ordered lists as inputs.',
   author = 'Christopher Paul Csiszar',
   author_email = 'christopher.csiszar@gmail.com',
