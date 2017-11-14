@@ -7,7 +7,7 @@ setup(
   author = 'Christopher Paul Csiszar',
   author_email = 'christopher.csiszar@gmail.com',
   url = 'https://github.com/chrispaulca/hosted_waterfall/tree/master', 
-  download_url = 'https://github.com/chrispaulca/hosted_waterfall/archive/0.1.tar.gz',
+  download_url = 'https://github.com/chrispaulca/hosted_waterfall/archive/0.2.tar.gz',
   keywords = ['waterfall', 'chart', 'charts', 'accounting', 'automate'],
   classifiers = [],
 )
