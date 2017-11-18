@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #------------------------------------------
 
-def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", y_lab = "Example values"
+def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", y_lab = "Example values",
               formatting = "{:,.0f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
     
     changes = {'amount' : data}
