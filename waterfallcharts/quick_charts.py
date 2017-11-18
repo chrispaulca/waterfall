@@ -45,7 +45,7 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     my_plot = trans['amount'].plot(kind='bar', stacked=True, bottom=blank,legend=None, figsize=(10, 5), title=Title, color=trans.positive.map({1: green_color, 0: red_color, 99:blue_color, 100:"gray"}))
     #my_plot.plot(step.index, step.values,'k') #this makes the blank lines
     my_plot.set_xlabel("\n" + x_lab)
-    my_plot.set_ylabel(y_lab + y_lab)
+    my_plot.set_ylabel(y_lab + "\n")
     
     #Format the axis for dollars
     my_plot.yaxis.set_major_formatter(formatter)
