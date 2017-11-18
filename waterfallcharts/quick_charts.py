@@ -1,4 +1,3 @@
-
 from matplotlib.ticker import FuncFormatter
 import numpy as np
 import pandas as pd
@@ -42,7 +41,10 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     
 
     #Plot and label
-    my_plot = trans['amount'].plot(kind='bar', stacked=True, bottom=blank,legend=None, figsize=(10, 5), title=Title, color=trans.positive.map({1: green_color, 0: red_color, 99:blue_color, 100:"gray"}))
+    my_plot = trans['amount'].plot(kind='bar', stacked=True, bottom=blank,legend=None, 
+                                   figsize=(10, 5), title=Title, 
+                                   color=trans.positive.map({1: green_color, 0: red_color, 99:blue_color, 
+                                                             100:"gray"}))
     #my_plot.plot(step.index, step.values,'k') #this makes the blank lines
     my_plot.set_xlabel("\n" + x_lab)
     my_plot.set_ylabel(y_lab + "\n")
@@ -54,11 +56,16 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     y_height = trans.amount.cumsum().shift(1).fillna(0)
 
     #Get an offset so labels don't sit right on top of the bar
-    max = trans['amount'].max()
-    min = trans['amount'].min()
-    neg_offset = -1*(min / 7)
-    pos_offset = max / 50
-    plot_offset = int(max / 15)
+    max = abs(trans['amount'].max())
+    min = abs(trans['amount'].min())
+    
+    if max >= min:
+        maxmax = max   
+    else:
+        maxmax = min
+        
+    pos_offset = maxmax / 50
+    plot_offset = int(maxmax / 15)
 
     #Start label loop
     loop = 0
@@ -70,10 +77,10 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
             y = y_height[loop] + row['amount']
         # Determine if we want a neg or pos offset
         if row['amount'] > 0:
-            y += pos_offset
+            y += (pos_offset*1.2)
             my_plot.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g')
         else:
-            y -= neg_offset
+            y -= (pos_offset*2.3)
             my_plot.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r')
         loop+=1
 
@@ -87,4 +94,4 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
 
 #---------------------------------------------
 
-# EOF #
+# EoF
