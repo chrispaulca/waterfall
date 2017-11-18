@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #------------------------------------------
 
-def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments",
+def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", y_lab = "Example values"
               formatting = "{:,.0f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
     
     changes = {'amount' : data}
@@ -45,6 +45,7 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     my_plot = trans['amount'].plot(kind='bar', stacked=True, bottom=blank,legend=None, figsize=(10, 5), title=Title, color=trans.positive.map({1: green_color, 0: red_color, 99:blue_color, 100:"gray"}))
     #my_plot.plot(step.index, step.values,'k') #this makes the blank lines
     my_plot.set_xlabel("\n" + x_lab)
+    my_plot.set_ylabel(y_lab + y_lab)
     
     #Format the axis for dollars
     my_plot.yaxis.set_major_formatter(formatter)
