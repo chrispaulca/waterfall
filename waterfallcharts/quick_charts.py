@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 #------------------------------------------
 
 def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", y_lab = "Example values",
-              formatting = "{:,.0f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
+              formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
     
     changes = {'amount' : data}
     
@@ -59,13 +59,24 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     max = abs(trans['amount'].max())
     min = abs(trans['amount'].min())
     
+    temp = list(trans.amount)
+    
+    for i in range(len(temp)):
+        if (i > 0) & (i < (len(temp) - 1)):
+            temp[i] = temp[i] + temp[i-1]
+    
+    trans['temp'] = temp
+            
+    plot_max = trans['temp'].max()
+    plot_min = trans['temp'].min()
+    
     if max >= min:
         maxmax = max   
     else:
         maxmax = min
         
     pos_offset = maxmax / 50
-    plot_offset = int(maxmax / 15)
+    plot_offset = int(maxmax / 15) ## needs to me cumulative sum dynamic
 
     #Start label loop
     loop = 0
@@ -85,7 +96,7 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
         loop+=1
 
     #Scale up the y axis so there is room for the labels
-    my_plot.set_ylim(blank.min()-2*int(plot_offset),blank.max()+2*int(plot_offset))
+    my_plot.set_ylim(plot_min-2*int(plot_offset),plot_max+2*int(plot_offset))
     #Rotate the labels
     my_plot.set_xticklabels(trans.index,rotation=0)
     my_plot.axhline(0, color='black', linewidth = 0.6)
@@ -93,5 +104,3 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     return my_plot
 
 #---------------------------------------------
-
-# EoF
