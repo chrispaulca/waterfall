@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 
 #------------------------------------------
 
-def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", DPI=200,
+def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments",
               formatting = "{:,.0f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
     
     changes = {'amount' : data}
@@ -80,7 +80,6 @@ def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments"
     my_plot.set_ylim(blank.min()-2*int(plot_offset),blank.max()+2*int(plot_offset))
     #Rotate the labels
     my_plot.set_xticklabels(trans.index,rotation=0)
-    #my_plot.get_figure().savefig("waterfall_%s.png" % Title.replace(" ", "-"),dpi=DPI,bbox_inches='tight')
     my_plot.axhline(0, color='black', linewidth = 0.6)
 
     return my_plot
