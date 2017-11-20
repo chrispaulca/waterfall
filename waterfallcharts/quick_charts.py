@@ -6,7 +6,29 @@ import matplotlib.pyplot as plt
 #------------------------------------------
 
 def waterfall(index, data, Title = "Example Chart", x_lab = "Example Increments", y_lab = "Example values",
-              formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF'):
+              formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
+             sorted_value = False, threshold=None):
+    
+    #convert data and index to np.array
+    index=np.array(index)
+    data=np.array(data)
+    
+    #sorted by absolute value 
+    if sorted_value: 
+        abs_data = abs(data)
+        data_order = np.argsort(abs_data)[::-1]
+        data = data[data_order]
+        index = index[data_order]
+    
+    #group contributors less than the threshold into 'other' 
+    if threshold:
+        
+        abs_data = abs(data)
+        threshold_v = abs_data.max()*threshold
+        
+        if threshold_v > abs_data.min():
+            index = np.append(index[abs_data>=threshold_v],'other')
+            data = np.append(data[abs_data>=threshold_v],sum(data[abs_data<threshold_v]))
     
     changes = {'amount' : data}
     
