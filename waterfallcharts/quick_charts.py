@@ -146,7 +146,7 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     #Scale up the y axis so there is room for the labels
     my_plot.set_ylim(plot_min-round(2*plot_offset, 7),plot_max+round(2*plot_offset, 7))
     #Rotate the labels
-    my_plot.set_xticklabels(trans.index,rotation=0)
+    my_plot.set_xticklabels(trans.index,rotation=40)
     my_plot.axhline(0, color='black', linewidth = 0.6)
 
     return my_plot
