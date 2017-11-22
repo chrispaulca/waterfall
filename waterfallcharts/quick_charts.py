@@ -93,7 +93,7 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     
     #Plot and label
     my_plot = plt.bar(range(0,len(trans.index)), blank, width=0.5, color='white')
-    my_plot = plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
+    plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
              bottom=blank, color=my_colors)       
                                    
     
@@ -102,8 +102,8 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     #my_plot = lines.Line2D((3,3), (4,4))
     
     #axis labels
-    my_plot = plt.xlabel("\n" + x_lab)
-    my_plot = plt.ylabel(y_lab + "\n")
+    plt.xlabel("\n" + x_lab)
+    plt.ylabel(y_lab + "\n")
 
     #Get the y-axis position for the labels
     y_height = trans.amount.cumsum().shift(1).fillna(0)
@@ -131,7 +131,7 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     else:
         maxmax = abs(plot_min)
         
-    pos_offset = maxmax / 50
+    pos_offset = maxmax / 40
     
     plot_offset = maxmax / 15 ## needs to me cumulative sum dynamic
 
@@ -145,22 +145,22 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
             y = y_height[loop] + row['amount']
         # Determine if we want a neg or pos offset
         if row['amount'] > 0:
-            y += (pos_offset*1.6)
-            my_plot = plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g', fontsize=9)
+            y += (pos_offset*2)
+            plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g', fontsize=9)
         else:
-            y -= (pos_offset*4)
-            my_plot = plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r', fontsize=9)
+            y -= (pos_offset*4.8)
+            plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r', fontsize=9)
         loop+=1
 
     #Scale up the y axis so there is room for the labels
-    my_plot = plt.ylim(plot_min-round(2*plot_offset, 7),plot_max+round(2*plot_offset, 7))
+    plt.ylim(plot_min-round(3.6*plot_offset, 7),plot_max+round(3.6*plot_offset, 7))
     
     #Rotate the labels
-    my_plot = plt.xticks(range(0,len(trans)), trans.index, rotation=45)
+    plt.xticks(range(0,len(trans)), trans.index, rotation=45)
     
     #add zero line and title
-    my_plot = plt.axhline(0, color='black', linewidth = 0.6, linestyle="dashed")
-    my_plot = plt.title(Title)
-    my_plot = plt.tight_layout()
+    plt.axhline(0, color='black', linewidth = 0.6, linestyle="dashed")
+    plt.title(Title)
+    plt.tight_layout()
 
-    return my_plot
+    return plt
