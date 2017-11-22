@@ -13,6 +13,7 @@ from matplotlib.ticker import FuncFormatter
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
+import matplotlib.lines as lines
 
 #------------------------------------------
 
@@ -54,6 +55,9 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
         'The two args are the value and tick position'
         return formatting.format(x)
     formatter = FuncFormatter(money)
+    
+    fig, ax = plt.subplots()
+    ax.yaxis.set_major_formatter(formatter)
 
     #Store data and create a blank series to use for the waterfall
     trans = pd.DataFrame(data=changes,index=index)
@@ -79,22 +83,27 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     trans.loc[trans['positive'] < 0, 'positive'] = 99
     trans.loc[(trans['positive'] > 0) & (trans['positive'] < 1), 'positive'] = 99
     
-
-    #Plot and label
-    my_plot = trans['amount'].plot(kind='bar', stacked=True, bottom=blank,legend=None, 
-                                   figsize=(10, 5), title=Title, 
-                                   color=trans.positive.map({1: green_color, 0: red_color, 99:blue_color, 
-                                                             100:"gray"}))
+    trans['color'] = trans['positive']
     
-    # connecting lines
-    my_plot.plot(step.index, step.values,'k', linewidth = 0.3, color = "gray", )
+    trans.loc[trans['positive'] == 1, 'color'] = green_color
+    trans.loc[trans['positive'] == 0, 'color'] = red_color
+    trans.loc[trans['positive'] == 99, 'color'] = blue_color
+    
+    my_colors = list(trans.color)
+    
+    #Plot and label
+    my_plot = plt.bar(range(0,len(trans.index)), blank, width=0.5, color='white')
+    my_plot = plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
+             bottom=blank, color=my_colors)       
+                                   
+    
+    # connecting lines - figure out later
+    #my_plot = lines.Line2D(step.index, step.values, color = "gray")
+    #my_plot = lines.Line2D((3,3), (4,4))
     
     #axis labels
-    my_plot.set_xlabel("\n" + x_lab)
-    my_plot.set_ylabel(y_lab + "\n")
-    
-    #Format the axis for dollars
-    my_plot.yaxis.set_major_formatter(formatter)
+    my_plot = plt.xlabel("\n" + x_lab)
+    my_plot = plt.ylabel(y_lab + "\n")
 
     #Get the y-axis position for the labels
     y_height = trans.amount.cumsum().shift(1).fillna(0)
@@ -136,17 +145,21 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
             y = y_height[loop] + row['amount']
         # Determine if we want a neg or pos offset
         if row['amount'] > 0:
-            y += (pos_offset*1.4)
-            my_plot.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g')
+            y += (pos_offset*1.6)
+            my_plot = plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g', fontsize=9)
         else:
-            y -= (pos_offset*3.6)
-            my_plot.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r')
+            y -= (pos_offset*4)
+            my_plot = plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r', fontsize=9)
         loop+=1
 
     #Scale up the y axis so there is room for the labels
-    my_plot.set_ylim(plot_min-round(2*plot_offset, 7),plot_max+round(2*plot_offset, 7))
+    my_plot = plt.ylim(plot_min-round(2*plot_offset, 7),plot_max+round(2*plot_offset, 7))
+    
     #Rotate the labels
-    my_plot.set_xticklabels(trans.index,rotation=40)
-    my_plot.axhline(0, color='black', linewidth = 0.6)
+    my_plot = plt.xticks(range(0,len(trans)), trans.index, rotation=45)
+    
+    #add zero line and title
+    my_plot = plt.axhline(0, color='black', linewidth = 0.6, linestyle="dashed")
+    my_plot = plt.title(Title)
 
     return my_plot
