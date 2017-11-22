@@ -161,5 +161,6 @@ def waterfall(index, data, Title="Example chart", x_lab="Example Increment", y_l
     #add zero line and title
     my_plot = plt.axhline(0, color='black', linewidth = 0.6, linestyle="dashed")
     my_plot = plt.title(Title)
+    my_plot = plt.tight_layout()
 
     return my_plot
