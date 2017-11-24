@@ -2,7 +2,7 @@
 
 A simple graphing tool that attempts to generate a standard waterfall chart in generic Python.
 
-The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who complained that no such easy to use package
+The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who remarked that no such easy to use package
 existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
 and improves upon data range reliability, appearance, and chart options.
 
