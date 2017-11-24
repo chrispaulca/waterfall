@@ -2,7 +2,7 @@
 
 A simple graphing tool that attempts to generate a standard waterfall chart in generic Python.
 
-The idea was first brought to my attention by Jeremy Howard, who complained that no such easy to use package
+The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who complained that no such easy to use package
 existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
 and improves upon data range reliability, appearance, and chart options.
 
@@ -12,7 +12,7 @@ random forest interpretation purposes.
 ## Functionality
 
 There is currently one function: 
-* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart
+* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=320>
 
 There are three features: 
 
@@ -23,10 +23,10 @@ There are three features:
 * formatting: Formats Y axis labels and bar chart labels to the specified input
 
 Additionally, there are several arguments that control for chart title, axis names, bar colors, and custom bar labels for 
-'other' and 'net'
+'other' and 'net'<br><img src=images/image2.png width=320>
 
 
-Check out the [examples](**notebook's name here**).
+Check out the [examples](Examples.ipybn).
 
 
 ## Installation
@@ -34,13 +34,13 @@ Check out the [examples](**notebook's name here**).
 Simply install the Python `waterfallcharts` package:
 
 ```bash
-pip install waterfallcharts
+$ pip install waterfallcharts
 ```
 
 or upgrade to the latest version:
 
 ```bash
-pip install -U waterfallcharts
+$ pip install -U waterfallcharts
 ```
 
 
@@ -62,7 +62,7 @@ plot = qc.waterfall()
 ### Deploy
 
 ```bash
-python setup.py sdist upload
+$ python setup.py sdist upload
 ```
 
 
