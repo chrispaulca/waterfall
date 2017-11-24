@@ -12,7 +12,7 @@ random forest interpretation purposes.
 ## Functionality
 
 There is currently one function: 
-* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=600>
+* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=900>
 
 There are three features: 
 
@@ -23,7 +23,7 @@ There are three features:
 * formatting: Formats Y axis labels and bar chart labels to the specified input
 
 Additionally, there are several arguments that control for chart title, axis names, bar colors, and custom bar labels for 
-'other' and 'net'<br><img src=images/image2.png width=600>
+'other' and 'net'<br><img src=images/image2.png width=900>
 
 
 Check out the [examples](Examples.ipybn).
