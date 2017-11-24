@@ -12,7 +12,7 @@ random forest interpretation purposes.
 ## Functionality
 
 There is currently one function: 
-* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=320>
+* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=600>
 
 There are three features: 
 
@@ -23,7 +23,7 @@ There are three features:
 * formatting: Formats Y axis labels and bar chart labels to the specified input
 
 Additionally, there are several arguments that control for chart title, axis names, bar colors, and custom bar labels for 
-'other' and 'net'<br><img src=images/image2.png width=320>
+'other' and 'net'<br><img src=images/image2.png width=600>
 
 
 Check out the [examples](Examples.ipybn).
@@ -46,14 +46,14 @@ $ pip install -U waterfallcharts
 
 ## Usage
 
-As detailed in the [example](https://github.com/chrispaulca/waterfall/blob/master/packageTest.ipynb) and source code, the function assumes two list inputs, one of the contribution NAMES and the other of the contribution AMOUNTS. Please note that the NET SUM of all contributions is not an input to the function, and is calculated for you.
+As detailed in the [example](Examples.ipynb) and source code, the function assumes two list inputs, one of the contribution NAMES and the other of the contribution AMOUNTS. Please note that the NET SUM of all contributions is not an input to the function, and is calculated for you.
 
 
 ```python
 from waterfallcharts import quick_charts as qc
 a = ['sales','returns','credit fees','rebates','late charges','shipping']
 b = [350000,-30000,-7500,-25000,95000,-7000]
-plot = qc.waterfall()
+plot = qc.waterfall(a,b)
 ```
 
 
