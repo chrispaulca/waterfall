@@ -26,7 +26,7 @@ Additionally, there are several arguments that control for chart title, axis nam
 'other' and 'net'<br><img src=images/image2.png width=900>
 
 
-Check out the [examples](Examples.ipybn).
+Check out the [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb).
 
 
 ## Installation
@@ -46,7 +46,7 @@ $ pip install -U waterfallcharts
 
 ## Usage
 
-As detailed in the [example](Examples.ipynb) and source code, the function assumes two list inputs, one of the contribution NAMES and the other of the contribution AMOUNTS. Please note that the NET SUM of all contributions is not an input to the function, and is calculated for you.
+As detailed in the [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb) and source code, the function assumes two list inputs, one of the contribution NAMES and the other of the contribution AMOUNTS. Please note that the NET SUM of all contributions is not an input to the function, and is calculated for you.
 
 
 ```python
