@@ -1,11 +1,6 @@
 '''
 A function that attempts to generate a standard waterfall chart in generic Python. Requires two sequences,
 one of labels and one of values, ordered accordingly.
-
-The idea was first brought to my attention by Jeremy Howard, who complained no such easy to use package
-existed. The underlying method borrows from Chris Moffitt's idea at 
-http://pbpython.com/waterfall-chart.html
-but is substantially improved upon with respect to appearance, data range reliability, and options.
 '''
 
 
