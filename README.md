@@ -1,19 +1,29 @@
 # waterfallcharts
 
-Fill in description of waterfallchars
+A simple graphing tool that attempts to generate a standard waterfall chart in generic Python.
 
+The idea was first brought to my attention by Jeremy Howard, who complained that no such easy to use package
+existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
+and improves upon data range reliability, appearance, and chart options.
+
+The primary aim of the package is to provide a quick and reliable way to generate waterfall charts on a whim, for both accounting and 
+random forest interpretation purposes.
 
 ## Functionality
 
-There a currently one function: 
-* `quick_charts()`: Fill in descipion of the function here please 
+There is currently one function: 
+* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart
 
-There are two features: 
+There are three features: 
 
-* sorted_value:
+* sorted_value: Sorts contributions by absolute value in the chart
 
-* threshold: 
+* threshold: Groups all contributions under a certain threshold value into an 'other' group
 
+* formatting: Formats Y axis labels and bar chart labels to the specified input
+
+Additionally, there are several arguments that control for chart title, axis names, bar colors, and custom bar labels for 
+'other' and 'net'
 
 
 Check out the [examples](**notebook's name here**).
@@ -21,8 +31,16 @@ Check out the [examples](**notebook's name here**).
 
 ## Installation
 
+Simply install the Python `waterfallcharts` package:
+
 ```bash
 pip install waterfallcharts
+```
+
+or upgrade to the latest version:
+
+```bash
+pip install -U waterfallcharts
 ```
 
 
@@ -39,39 +57,16 @@ plot = qc.waterfall()
 ```
 
 
-
-## Preferences
-
-
 ## Implementation notes
 
-
-
-
-
-
-
-
-
-
-
-
-
-------------------------------------------------------------------------------------------------------------
-!! This is a work in progress package !!
-
-Waterfall_charts attempts to provide an easy and quick way to plot basic (for now) and more advanced (to come) waterfall charts of the accounting and finance type.
-
-<img src="images/sample.png" width=400>
-
-## Guide
+### Deploy
 
 ```bash
-pip install waterfallcharts
+python setup.py sdist upload
 ```
 
-to your file imports add 
 
-```python
-from waterfallcharts import quick_charts as qc  
-```
+
+
+
+
