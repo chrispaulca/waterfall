@@ -143,7 +143,7 @@ def plot(index, data, Title="", x_lab="", y_lab="",
             y += (pos_offset*2)
             plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'g', fontsize=9)
         else:
-            y -= (pos_offset*4.8)
+            y -= (pos_offset*4)
             plt.annotate(formatting.format(row['amount']),(loop,y),ha="center", color = 'r', fontsize=9)
         loop+=1
 
