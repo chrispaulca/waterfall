@@ -12,7 +12,7 @@ import matplotlib.lines as lines
 
 #------------------------------------------
 
-def waterfall(index, data, Title="", x_lab="", y_lab="",
+def plot(index, data, Title="", x_lab="", y_lab="",
               formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
              sorted_value = False, threshold=None, other_label='other', net_label='net'):
     '''
