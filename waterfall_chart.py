@@ -14,7 +14,8 @@ import matplotlib.lines as lines
 
 def plot(index, data, Title="", x_lab="", y_lab="",
               formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
-             sorted_value = False, threshold=None, other_label='other', net_label='net'):
+             sorted_value = False, threshold=None, other_label='other', net_label='net', 
+             rotation_value = 30):
     '''
     Given two sequences ordered appropriately, generate a standard waterfall chart.
     Optionally modify the title, axis labels, number formatting, bar colors, 
@@ -151,7 +152,7 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     plt.ylim(plot_min-round(3.6*plot_offset, 7),plot_max+round(3.6*plot_offset, 7))
     
     #Rotate the labels
-    plt.xticks(range(0,len(trans)), trans.index, rotation=45)
+    plt.xticks(range(0,len(trans)), trans.index, rotation=rotation_value)
     
     #add zero line and title
     plt.axhline(0, color='black', linewidth = 0.6, linestyle="dashed")
