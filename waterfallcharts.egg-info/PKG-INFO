@@ -1,0 +1,13 @@
+Metadata-Version: 1.1
+Name: waterfallcharts
+Version: 3.8
+Summary: Quickly generates standard waterfall charts, takes two ordered lists as inputs.
+Home-page: https://github.com/chrispaulca/waterfall
+Author: Christopher Paul Csiszar
+Author-email: christopher.csiszar@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/chrispaulca/waterfall/archive/v3.8.tar.gz
+Description-Content-Type: UNKNOWN
+Description: UNKNOWN
+Keywords: waterfall,chart,charts,accounting,automate,random forest,decision tree
+Platform: UNKNOWN
