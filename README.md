@@ -22,8 +22,8 @@ There are three features:
 
 * formatting: Formats Y axis labels and bar chart labels to the specified input
 
-Additionally, there are several arguments that control for chart title, axis names, bar colors, and custom bar labels for 
-'other' and 'net'<br><img src=images/image2.png width=900>
+Additionally, there are several arguments that control for chart title, axis names, bar colors, custom bar labels for 
+'other' and 'net', and x label rotation angles <br><img src=images/image2.png width=900>
 
 
 Check out the [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb).
