@@ -27,7 +27,23 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     index=np.array(index)
     data=np.array(data)
     
-    // delete
+    # wip
+    #sorted by absolute value 
+    if sorted_value: 
+        abs_data = abs(data)
+        data_order = np.argsort(abs_data)[::-1]
+        data = data[data_order]
+        index = index[data_order]
+    
+    #group contributors less than the threshold into 'other' 
+    if threshold:
+        
+        abs_data = abs(data)
+        threshold_v = abs_data.max()*threshold
+        
+        if threshold_v > abs_data.min():
+            index = np.append(index[abs_data>=threshold_v],other_label)
+            data = np.append(data[abs_data>=threshold_v],sum(data[abs_data<threshold_v]))
     
     changes = {'amount' : data}
     
