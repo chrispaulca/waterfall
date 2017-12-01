@@ -27,6 +27,7 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     index=np.array(index)
     data=np.array(data)
     
+    # wip
     #sorted by absolute value 
     if sorted_value: 
         abs_data = abs(data)
