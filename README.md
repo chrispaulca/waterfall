@@ -13,6 +13,7 @@ random forest interpretation purposes.
 
 There is currently one function: 
 * `plot()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart
+
 <br><img src=images/image1.png width=900>
 
 There are three features: 
@@ -25,6 +26,7 @@ There are three features:
 
 Additionally, there are several arguments that control for chart title, axis names, bar colors, custom bar labels for 
 'other' and 'net', and x label rotation angles 
+
 <br><img src=images/image2.png width=900>
 
 
@@ -34,6 +36,7 @@ Check out these [examples](https://github.com/chrispaulca/hosted_waterfall/blob/
 ## Random forest interpretation
 
 Additionally, waterfall charts can be provided the output metrics of a decision tree interpreter. This allows for a visualization of incremental contributions of the tree's nodes to the final prediction - a nice way to see what your random forest is doing.
+
 <br><img src=images/RF1.png width=900>
 
 <br><img src=images/RF2.png width=900>
