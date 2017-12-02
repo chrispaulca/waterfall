@@ -12,7 +12,7 @@ random forest interpretation purposes.
 ## Functionality
 
 There is currently one function: 
-* `quick_charts()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=900>
+* `plot()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=900>
 
 There are three features: 
 
