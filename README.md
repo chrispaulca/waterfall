@@ -26,7 +26,15 @@ Additionally, there are several arguments that control for chart title, axis nam
 'other' and 'net', and x label rotation angles <br><img src=images/image2.png width=900>
 
 
-Check out the [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb).
+Check out these [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb) for simple charts.
+
+
+## Random forest interpretation
+
+Additionally, waterfall charts can be provided the output metrics of a decision tree interpreter. This allows for a visualization of incremental contributions of the tree's nodes to the final prediction - a nice way to see what your random forest is doing.
+<br><img src=images/RF1.png width=900>
+
+<br><img src=images/RF2.png width=900>
 
 
 ## Installation
