@@ -43,7 +43,7 @@ Additionally, waterfall charts can be provided the output metrics of a decision 
 
 <br><img src=images/RF2.png width=900>
 
-Check out this [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Example_Plot_with_RandomForest.ipynb) for the entire random forest code, built with the fastai library.
+Check out this [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Example_Plot_with_RandomForest.ipynb) for the entire random forest code, built with the fastai library.
 
 
 ## Installation
