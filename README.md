@@ -9,6 +9,8 @@ and improves upon data range reliability, appearance, and chart options.
 The primary aim of the package is to provide a quick and reliable way to generate waterfall charts on a whim, for both accounting and 
 random forest interpretation purposes.
 
+Thank you to [Jade Yun](https://github.com/yuyun2) for the random forest decision tree interpreter example, and for the sorted_values and thresholding features.
+
 ## Functionality
 
 There is currently one function: 
