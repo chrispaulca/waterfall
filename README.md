@@ -12,7 +12,8 @@ random forest interpretation purposes.
 ## Functionality
 
 There is currently one function: 
-* `plot()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart<br><img src=images/image1.png width=900>
+* `plot()`: Given two sequences ordered appropriately, of contribution amounts and labels, generate a standard waterfall chart
+<br><img src=images/image1.png width=900>
 
 There are three features: 
 
@@ -23,7 +24,8 @@ There are three features:
 * formatting: Formats Y axis labels and bar chart labels to the specified input
 
 Additionally, there are several arguments that control for chart title, axis names, bar colors, custom bar labels for 
-'other' and 'net', and x label rotation angles <br><img src=images/image2.png width=900>
+'other' and 'net', and x label rotation angles 
+<br><img src=images/image2.png width=900>
 
 
 Check out these [examples](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb) for simple charts.
