@@ -18,8 +18,10 @@ As detailed in the [example](https://github.com/chrispaulca/hosted_waterfall/blo
 
 ```python
 import waterfall_chart
+
 a = ['sales','returns','credit fees','rebates','late charges','shipping']
 b = [10,-30,-7.5,-25,95,-7]
+
 my_plot = waterfall_chart.plot(a, b)
 ```
 
