@@ -2,7 +2,7 @@
 
 ## Description
 
-[Waterfall charts](https://en.wikipedia.org/wiki/Waterfall_chart) are great at visualizing incremental changes to a starting value, up to a final net amount. This package is hassle free way to generate them in Python!
+[Waterfall charts](https://en.wikipedia.org/wiki/Waterfall_chart) are great at visualizing marginal value contributions to some system or starting value (bias). This package is hassle free way to generate them in Python!
 
 The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who remarked that no such package existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
 and improves upon data range reliability, appearance, and chart options.
