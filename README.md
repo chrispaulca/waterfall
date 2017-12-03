@@ -1,15 +1,27 @@
 # waterfallcharts
 
-A simple graphing tool that attempts to generate a standard waterfall chart in generic Python.
+## Description
 
-The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who remarked that no such easy to use package
-existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
+[Waterfall charts](https://en.wikipedia.org/wiki/Waterfall_chart) are great at visualizing incremental changes to a starting value, up to a final net amount. This package is hassle free way to generate them in Python!
+
+The idea was first brought to my attention by [Jeremy Howard](https://twitter.com/jeremyphoward), who remarked that no such package existed. The underlying method borrows from Chris Moffitt's [stacked bar charts approach](http://pbpython.com/waterfall-chart.html), 
 and improves upon data range reliability, appearance, and chart options.
 
-The primary aim of the package is to provide a quick and reliable way to generate waterfall charts on a whim, for both accounting and 
-random forest interpretation purposes.
+The application use of waterfall charts is up to the user's creativity! These charts are great at visualizing revenue and expenses, but are universally applicable to showing any kind of marginal contributions to a system.
 
 Thank you to [Jade Yun](https://github.com/yuyun2) for the random forest decision tree interpreter example, and for the sorted_values and thresholding features.
+
+
+## Usage
+
+As detailed in the [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb) and source code, the function assumes two list inputs, one of the contribution names and the other of the contribution amounts. Please note that the net sum of all contributions is not an input to the function, and is calculated for you.
+
+```python
+import waterfall_chart
+a = ['sales','returns','credit fees','rebates','late charges','shipping']
+b = [10,-30,-7.5,-25,95,-7]
+my_plot = waterfall_chart.plot(a, b)
+```
 
 ## Functionality
 
@@ -45,7 +57,6 @@ Additionally, waterfall charts can be provided the output metrics of a decision 
 
 Check out this [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Example_Plot_with_RandomForest.ipynb) for the entire random forest code, built with the fastai library.
 
-
 ## Installation
 
 Simply install the Python `waterfallcharts` package:
@@ -59,20 +70,6 @@ or upgrade to the latest version:
 ```bash
 $ pip install -U waterfallcharts
 ```
-
-
-## Usage
-
-As detailed in the [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Examples.ipynb) and source code, the function assumes two list inputs, one of the contribution NAMES and the other of the contribution AMOUNTS. Please note that the NET SUM of all contributions is not an input to the function, and is calculated for you.
-
-
-```python
-import waterfall_chart
-a = ['sales','returns','credit fees','rebates','late charges','shipping']
-b = [10,-30,-7.5,-25,95,-7]
-my_plot = waterfall_chart.plot(a, b)
-```
-
 
 ## Implementation notes
 
