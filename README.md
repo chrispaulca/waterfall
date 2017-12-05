@@ -53,7 +53,7 @@ Check out these [examples](https://github.com/chrispaulca/hosted_waterfall/blob/
 
 Additionally, waterfall charts can be provided the output metrics of a decision tree interpreter. This allows for a visualization of incremental contributions of the tree's nodes to the final prediction - a nice way to see what your random forest is doing.
 
-For example, after constructing a random forest on sklearn's breast cancer dataset, we obtain the breakdown of feature contributions to the final prediction for one row of the date. We can use a waterfall chart to intuitively relay this information to an audience.
+For example, after constructing a random forest on sklearn's breast cancer dataset, we obtain the breakdown of feature contributions to the final prediction for one row of the data. We can use a waterfall chart to intuitively relay this information to an audience.
 
 <br><img src=images/RF1.png width=900>
 
