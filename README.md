@@ -55,7 +55,7 @@ Additionally, waterfall charts can be provided the output metrics of a [decision
 
 For example, after constructing a random forest on sklearn's breast cancer dataset, we obtain the breakdown of feature contributions to the final prediction for one row of the data. We can use a waterfall chart to intuitively relay this information to an audience.
 
-<br><img src=images/RF2.png width=900>
+<br><img src=images/RF2.png width=700>
 
 
 Check out this [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Example_Plot_with_RandomForest.ipynb) for the entire random forest code, built with the [fastai](https://github.com/fastai/fastai) library.
