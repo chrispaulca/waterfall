@@ -58,7 +58,7 @@ For example, after constructing a random forest on sklearn's breast cancer datas
 <br><img src=images/RF2.png width=700>
 
 
-Check out this [example](https://github.com/chrispaulca/hosted_waterfall/blob/master/Example_Plot_with_RandomForest.ipynb) for the entire random forest code, built with the [fastai](https://github.com/fastai/fastai) library.
+Check out this [example](https://github.com/chrispaulca/waterfall/blob/master/Tree_interpreter_Example.ipynb) for the entire random forest code, built with the [fastai](https://github.com/fastai/fastai) library.
 
 ## Installation
 
