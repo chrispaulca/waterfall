@@ -15,7 +15,7 @@ import matplotlib.lines as lines
 def plot(index, data, Title="", x_lab="", y_lab="",
               formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
              sorted_value = False, threshold=None, other_label='other', net_label='net', 
-             rotation_value = 30):
+             rotation_value = 30, blank_color=(0,0,0,0), figsize = (10,10)):
     '''
     Given two sequences ordered appropriately, generate a standard waterfall chart.
     Optionally modify the title, axis labels, number formatting, bar colors, 
@@ -53,7 +53,7 @@ def plot(index, data, Title="", x_lab="", y_lab="",
         return formatting.format(x)
     formatter = FuncFormatter(money)
     
-    fig, ax = plt.subplots()
+    fig, ax = plt.subplots(figsize=figsize)
     ax.yaxis.set_major_formatter(formatter)
 
     #Store data and create a blank series to use for the waterfall
@@ -89,7 +89,7 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     my_colors = list(trans.color)
     
     #Plot and label
-    my_plot = plt.bar(range(0,len(trans.index)), blank, width=0.5, color='white')
+    my_plot = plt.bar(range(0,len(trans.index)), blank, width=0.5, color=blank_color)
     plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
              bottom=blank, color=my_colors)       
                                    
