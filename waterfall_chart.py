@@ -160,4 +160,4 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     plt.title(Title)
     plt.tight_layout()
 
-    return plt
+    return fig, ax
