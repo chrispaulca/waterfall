@@ -15,7 +15,7 @@ import matplotlib.lines as lines
 def plot(index, data, Title="", x_lab="", y_lab="",
               formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
              sorted_value = False, threshold=None, other_label='other', net_label='net', 
-             rotation_value = 30, blank_color=(0,0,0,0), figsize = (10,10)):
+             rotation_value = 30, blank_color=(0,0,0,0), figsize = (10,10), baseline_value=None, baseline_label=None):
     '''
     Given two sequences ordered appropriately, generate a standard waterfall chart.
     Optionally modify the title, axis labels, number formatting, bar colors, 
@@ -45,6 +45,12 @@ def plot(index, data, Title="", x_lab="", y_lab="",
             index = np.append(index[abs_data>=threshold_v],other_label)
             data = np.append(data[abs_data>=threshold_v],sum(data[abs_data<threshold_v]))
     
+    # if baseline_value is supplied it should always be shown, so it shouldn't be filtered out by threshold.
+    # Furthermore, it should always be first.
+    if baseline_value and baseline_label:
+        index = np.append([baseline_label], index)
+        data = np.append([baseline_value],data)
+
     changes = {'amount' : data}
     
     #define format formatter
