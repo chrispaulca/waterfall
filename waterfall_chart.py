@@ -15,7 +15,7 @@ import matplotlib.lines as lines
 def plot(index, data, Title="", x_lab="", y_lab="",
               formatting = "{:,.1f}", green_color='#29EA38', red_color='#FB3C62', blue_color='#24CAFF',
              sorted_value = False, threshold=None, other_label='other', net_label='net', 
-             rotation_value = 30, blank_color=(0,0,0,0), figsize = (10,10)):
+             rotation_value = 30, blank_color=(0,0,0,0), figsize = (10,10), connect_lines=False):
     '''
     Given two sequences ordered appropriately, generate a standard waterfall chart.
     Optionally modify the title, axis labels, number formatting, bar colors, 
@@ -90,14 +90,16 @@ def plot(index, data, Title="", x_lab="", y_lab="",
     
     #Plot and label
     my_plot = plt.bar(range(0,len(trans.index)), blank, width=0.5, color=blank_color)
-    plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
-             bottom=blank, color=my_colors)       
-                                   
-    
-    # connecting lines - figure out later
-    #my_plot = lines.Line2D(step.index, step.values, color = "gray")
-    #my_plot = lines.Line2D((3,3), (4,4))
-    
+    bars = plt.bar(range(0,len(trans.index)), trans.amount, width=0.6,
+             bottom=blank, color=my_colors)
+
+    # connecting lines
+    if connect_lines:
+        for bar in bars[:-1]:
+            x,y = bar.xy
+            h,w = bar.get_height(), bar.get_width()
+            plt.hlines(y+h, x, x+w+1)
+
     #axis labels
     plt.xlabel("\n" + x_lab)
     plt.ylabel(y_lab + "\n")
